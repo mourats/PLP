@@ -5,3 +5,4 @@ main = do
     input <- getLine
     let num = doubleMe (read input)
     print num
+

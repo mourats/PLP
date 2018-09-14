@@ -8,3 +8,4 @@ main:-
     Y is X * 2,
     write(Y),nl,
     halt(0).
+
