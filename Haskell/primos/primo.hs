@@ -10,9 +10,9 @@ isPrime n
 
 allPrimosMod :: Int -> Int -> Int
 allPrimosMod x y
-  | x == 0 = 0
-  | (mod x (10 ^ y)) == (mod x (10 ^ (y+1))) = allPrimosDiv x (y-1)
-  | isPrime (mod x (10 ^ y)) = 1 + allPrimosMod x (y+1)
+  | (mod x (10 ^ y)) == (mod x (10 ^ (y+1))) = 0
+  | isPrime (mod x (10 ^ y)) && isPrime (div (mod x (10 ^ y)) (10 ^(y-1))) = 2 + allPrimosMod x (y+1)
+  | isPrime (mod x (10 ^ y)) || isPrime (div (mod x (10 ^ y)) (10 ^(y-1))) = 1 + allPrimosMod x (y+1)
   | otherwise = allPrimosMod x (y+1)
 
 allPrimosDiv :: Int -> Int -> Int
