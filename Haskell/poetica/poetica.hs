@@ -1,10 +1,14 @@
 ehpoetica :: [Char] -> [Char] -> Char
-ehpoetica palavra1 palavra2
-| ((head palavra1) == (head palavra2)) && ((tail palavra1) == (tail palavra2)) = 'S'
-| otherwise = 'N'
+ehpoetica array1 array2
+    | (palavra1) == (palavra2) = 'S'
+    | otherwise = 'N'
+    where 
+        palavra1 = map (:[]) array1
+        palavra2 = map (:[]) array2
 
+main :: IO()
 main = do  
-  input1 <- getLine
-  input2 <- getLine
-  let retorno = ehpoetica (map (:[]) input1) (map (:[]) input2)
-  print retorno
+    input1 <- getLine
+    input2 <- getLine
+    let retorno = ehpoetica (read input1) (read input2)
+    print retorno
