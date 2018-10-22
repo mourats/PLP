@@ -1,8 +1,8 @@
 saoPoeticas :: IO()
 saoPoeticas = do
-	a <- getLine
-	b <- getLine
-	if head a == head b && last a == last b then putStrLn ("S")
+	x <- getLine
+	y <- getLine
+	if head x == head y && last x == last y then putStrLn ("S")
 	else putStrLn ("N")
 
 main = do
